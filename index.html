@@ -1,0 +1,50 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Unsubscriber</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container mt-3">
+        <div id="popup-container" class="text-center">
+          <button id="start" class="btn btn-outline-black btn-sm" running="false">Start process</button>
+        </div>
+        <div id="channels-list" class="my-3">
+          <!-- Demo List of YouTube Channels -->
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="channel1" value="channel1">
+            <label class="custom-control-label" for="channel1">Channel 1</label>
+          </div>
+    
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="channel2" value="channel2">
+            <label class="custom-control-label" for="channel2">Channel 2</label>
+          </div>
+    
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="channel3" value="channel3">
+            <label class="custom-control-label" for="channel3">Channel 3</label>
+          </div>
+    
+          <!-- Add more channels as needed -->
+        </div>
+        <div id="unsubscribe-buttons" class="text-center">
+          <button id="unsubscribe-selected" class="btn btn-outline-primary btn-sm">Unsubscribe Selected</button>
+          <button id="unsubscribe-all" class="btn btn-outline-danger btn-sm">Unsubscribe All</button>
+        </div>
+      </div>
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Custom JS -->
+  <script src="index.js"></script>
+</body>
+</html>
