@@ -8,6 +8,9 @@
         "tabs",
         "activeTab"
       ],
+      "background":{
+        "service_worker":"background.js"
+      },
       "action": {
         "default_popup": "index.html",
         "default_icon": "assets/icon128.png",
