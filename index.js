@@ -14,6 +14,8 @@ start.addEventListener('click', () => {
         } else {
             start.innerText = "redirect to youtube ..";
           chrome.tabs.update(activeTab.id, { url: youtubeUrl });
+          
+
         }
       });
 })
