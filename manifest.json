@@ -5,12 +5,20 @@
       "description": "the best and easy way to unsubscribe all youtube subscribed channel",
       "version": "1.0",
       "permissions": [
-        "tabs",
-        "activeTab"
+        "activeTab",
+        "storage"
       ],
       "background":{
         "service_worker":"background.js"
       },
+      "content_scripts": [
+        {
+          "matches": ["https://www.youtube.com/*"],
+          "run_at": "document_end",
+
+          "js": ["content_script.js"]
+        }
+      ],
       "action": {
         "default_popup": "index.html",
         "default_icon": "assets/icon128.png",
