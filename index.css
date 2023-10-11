@@ -1,40 +1,120 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  color: #000;
-  background-color: #ffff;
+  user-select: none;
+  box-sizing: border-box;
 }
 
-.container {
+body {
+  height: 125px;
+  width: 300px;
+  color: #0D1117;
+  padding: 5px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  flex-direction: column-reverse;
+  animation: pulseBackground 6s infinite alternate; /* Apply pulse effect to background */
+  transition: background 4s ease; /* Added transition property */
 }
 
-#popup-container {
+@keyframes pulseBackground {
+  0% {
+    background: linear-gradient(to right, #ff6666, #6666ff);
+  }
+  12.5% {
+    background: linear-gradient(to right, #ffb366, #66b3ff);
+  }
+  25% {
+    background: linear-gradient(to right, #ffff66, #66ffff);
+  }
+  37.5% {
+    background: linear-gradient(to right, #b3ff66, #66ff66);
+  }
+  50% {
+    background: linear-gradient(to right, #66ff66, #66ffb3);
+  }
+  62.5% {
+    background: linear-gradient(to right, #66ffb3, #66ff66);
+  }
+  75% {
+    background: linear-gradient(to right, #66ffff, #ffff66);
+  }
+  87.5% {
+    background: linear-gradient(to right, #66b3ff, #ffb366);
+  }
+  100% {
+    background: linear-gradient(to right, #6666ff, #ff6666);
+  }
+}
+
+@keyframes buttonZoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+header {
+  position: relative;
+  width: 100%;
+}
+
+.logo-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  /* border: 1px solid #000; */
-  padding: 20px;
-  margin-bottom: 20px;
+  justify-content: center;
+  padding: 10px;
 }
 
-button {
+.logo-image {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+}
+
+header a {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+button#start {
+  display: block;
   margin-top: 10px;
-
-  color: #000;
-  white-space: normal;
+  padding: 10px 25px;
+  color: #FFFFFF;
+  background: #0D1117;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  animation: buttonZoom 1s ease-in-out infinite alternate; /* Apply zoom effect to the button */
+  transition: background 4s ease;
 }
 
-/* Ensure checkboxes and labels are in a row */
-input[type="checkbox"] {
-  margin-right: 5px;
+button#start:hover {
+  background: #1F6FEB;
 }
 
-label {
-  margin-right: 15px;
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-
+footer a {
+  text-transform: uppercase;
+  color: #1F6FEB;
+  text-decoration: none;
+}

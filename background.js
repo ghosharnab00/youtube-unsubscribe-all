@@ -1,4 +1,17 @@
-
-const channels =  chrome.storage.local.get(["channelNames"], function(result) {
-    console.log('Value currently is ' + result.channels);
-});
+chrome.webNavigation.onCompleted.addListener((details) => {
+    chrome.runtime.sendMessage({type: "msg", msg: "start"});
+  
+    chrome.scripting.executeScript({
+      target: {tabId: details.tabId},
+      files: [
+        "function.js"
+      ],
+    });
+  }, {
+    url: [
+      {
+        hostContains: '.youtube.',
+        pathContains: 'feed/channels',
+      },
+    ]
+  });
